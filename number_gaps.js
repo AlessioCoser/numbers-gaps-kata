@@ -17,12 +17,12 @@ class NumberGaps{
 
   gaps() {
     var ranges = [];
-    if (1 < this.numbers[0]) {
-      ranges.push("1-" + (this.numbers[0] - 1));
-    }
-    for (var i = 1; i < this.numbers.length; i++) {
-      var prev = this.numbers[i-1];
+    var prev = 0;
+    for (var i = 0; i < this.numbers.length; i++) {
       var curr = this.numbers[i];
+      if(i > 0) {
+        prev = this.numbers[i-1];
+      }
       if (curr - prev > 1) {
         ranges.push((prev + 1) + "-" + (curr - 1));
       }
