@@ -19,12 +19,12 @@ class NumberGaps{
   gaps() {
     this._gaps = [];
     for (let index in this._numbers) {
-      this.appendGaps((this._numbers[index-1] || 0), this._numbers[index]);
+      this._appendGaps((this._numbers[index-1] || 0), this._numbers[index]);
     }
     return this._gaps;
   }
 
-  appendGaps(prev, curr){
+  _appendGaps(prev, curr){
     if (curr - prev == 2) {
       this._gaps.push((prev + 1).toString());
     }
