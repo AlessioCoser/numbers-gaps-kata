@@ -3,7 +3,7 @@ var expect = chai.expect;
 var NumberGaps = require("./number_gaps");
 
 describe('Number Gaps Kata', function() {
-  it('empty array should return empty array', function() {
+  it('empty array should return no gaps', function() {
     var numbers = new NumberGaps([]);
     expect(numbers.gaps()).to.eql([]);
   });
@@ -45,5 +45,12 @@ describe('Number Gaps Kata', function() {
     numbers.insert(7);
     numbers.insert(4);
     expect(numbers.gaps()).to.eql(["2-3","5-6"]);
+  });
+
+  it('insert number 1 and remove 1 should return no gaps', function() {
+    var numbers = new NumberGaps([]);
+    numbers.insert(1);
+    numbers.remove(1);
+    expect(numbers.gaps()).to.eql([]);
   });
 });

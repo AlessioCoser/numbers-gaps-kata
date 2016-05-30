@@ -8,6 +8,13 @@ class NumberGaps{
     this.numbers.sort((a,b) => a-b);
   }
 
+  remove(num) {
+    var index = this.numbers.indexOf(num);
+    if(index >= 0) {
+      this.numbers.splice(index,1);
+    }
+  }
+
   gaps() {
     var ranges = [];
     if (1 < this.numbers[0]) {
