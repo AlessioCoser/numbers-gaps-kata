@@ -7,10 +7,18 @@ describe('Number Gaps Kata', function() {
     var numbers = new NumberGaps([]);
     expect(numbers.gaps()).to.eql([]);
   });
+
+  it('insert number 1 should return no gaps', function() {
+    var numbers = new NumberGaps([]);
+    numbers.insert(1);
+    expect(numbers.gaps()).to.eql([]);
+  });
+
   it('[2] should return array with single range ["1-1"]', function() {
     var numbers = new NumberGaps([2]);
     expect(numbers.gaps()).to.eql(["1-1"]);
   });
+
   it('[2,3,4,7] should return array with single range ["1-1", "5-6"]', function() {
     var numbers = new NumberGaps([2,3,4,7]);
     expect(numbers.gaps()).to.eql(["1-1", "5-6"]);

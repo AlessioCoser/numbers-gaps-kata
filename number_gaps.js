@@ -3,6 +3,11 @@ class NumberGaps{
     this.numbers = numbers;
   }
 
+  insert(num) {
+    this.numbers.push(num);
+    this.numbers.sort((a,b) => a-b);
+  }
+
   gaps() {
     var ranges = [];
     if (1 < this.numbers[0]) {
