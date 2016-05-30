@@ -1,4 +1,4 @@
-class NumberGaps{
+module.exports = class NumberGaps{
   constructor(numbers) {
     this._numbers = numbers;
     this._gaps = [];
@@ -33,5 +33,3 @@ class NumberGaps{
     }
   }
 }
-
-module.exports = NumberGaps;
