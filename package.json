@@ -1,0 +1,19 @@
+{
+  "name": "alternate_sorting",
+  "version": "0.0.1",
+  "author": "Alessio Coser <alessio.coser@xpeppers.com>",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha number_gaps_test.js"
+  },
+  "main": "converter.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlessioCoser/numbers-gaps-kata"
+  },
+  "dependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "to-iso-string": "*"
+  }
+}
+
