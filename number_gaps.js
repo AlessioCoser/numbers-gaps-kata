@@ -1,33 +1,36 @@
 class NumberGaps{
   constructor(numbers) {
-    this.numbers = numbers;
+    this._numbers = numbers;
+    this._gaps = [];
   }
 
   insert(num) {
-    this.numbers.push(num);
-    this.numbers.sort((a,b) => a-b);
+    this._numbers.push(num);
+    this._numbers.sort((a,b) => a-b);
   }
 
   remove(num) {
-    var index = this.numbers.indexOf(num);
+    var index = this._numbers.indexOf(num);
     if(index >= 0) {
-      this.numbers.splice(index,1);
+      this._numbers.splice(index,1);
     }
   }
 
   gaps() {
-    var ranges = [];
-    var prev = 0;
-    for (var i = 0; i < this.numbers.length; i++) {
-      var curr = this.numbers[i];
-      if(i > 0) {
-        prev = this.numbers[i-1];
-      }
-      if (curr - prev > 1) {
-        ranges.push((prev + 1) + "-" + (curr - 1));
-      }
+    this._gaps = [];
+    for (let index in this._numbers) {
+      this.appendGaps((this._numbers[index-1] || 0), this._numbers[index]);
     }
-    return ranges;
+    return this._gaps;
+  }
+
+  appendGaps(prev, curr){
+    if (curr - prev == 2) {
+      this._gaps.push((prev + 1).toString());
+    }
+    if (curr - prev > 2) {
+      this._gaps.push((prev + 1) + "-" + (curr - 1));
+    }
   }
 }
 
